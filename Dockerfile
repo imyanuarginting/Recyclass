@@ -4,7 +4,7 @@ FROM python:3.8.10
 WORKDIR /app
 
 # Copy requirements.txt untuk menginstal dependencies
-COPY requirements.txt 
+COPY requirements.txt .
 
 # Menginstal dependencies
 RUN pip install --no-cache-dir -r requirements.txt
