@@ -12,5 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy file main.py ke dalam container
 COPY main.py .
 
-# Menjalankan aplikasi FastAPI pada port 8000
+# Copy file model1.h5 ke dalam container
+COPY model.h5 .
+
+# Menjalankan aplikasi FastAPI pada port 8080
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
