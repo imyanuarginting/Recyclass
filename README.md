@@ -5,4 +5,5 @@ This API allows you to upload an image, classify it using a pre-trained model, a
 ## Installation
 
 1. Clone the repository: 
-```git clone https://github.com/imyanuarginting/Recyclass-API.git
+```sheel
+git clone https://github.com/imyanuarginting/Recyclass-API.git
