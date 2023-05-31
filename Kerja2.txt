@@ -12,3 +12,5 @@ Selesai coding setelah Mengubah  backend dari Hapi.js menjadi FastAPI yang mengo
 Menguji tiap endpoint pada postman
 
 membuat Dockerfile
+
+Deploy API percobaan ke Cloud Run
