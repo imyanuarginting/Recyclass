@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Recyclass</string>
+    <string name="picture">picture</string>
+    <string name="article_title">judul_artikel</string>
+    <string name="article_desc">deskripsi_artikel</string>
+    <string name="article_date">tanggal_artikel</string>
+    <string name="related_article">Artikel Terkait</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
