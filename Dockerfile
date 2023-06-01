@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy file main.py ke dalam container
 COPY main.py .
 
-# Copy file model1.h5 ke dalam container
+# Copy file model.h5 ke dalam container
 COPY model.h5 .
 
 # Copy file artikel.json ke dalam container

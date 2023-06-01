@@ -8,7 +8,7 @@ import json
 
 app = FastAPI()
 
-model_path = os.path.join(os.path.dirname(__file__), 'model1.h5')
+model_path = os.path.join(os.path.dirname(__file__), 'model.h5')
 model = tf.keras.models.load_model(model_path)
 
 classification_result = None
