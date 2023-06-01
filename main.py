@@ -66,13 +66,13 @@ async def get_city_data(city: str):
     else:
         return JSONResponse(content={"error": "Lokasi Bank Sampah tidak ditemukan"})
 
-@app.get("/artikel")
-async def get_article():
-    file_path = "artikel.json"  # Ubah sesuai dengan path file JSON artikel Anda
-    with open(file_path) as file:
-        data = json.load(file)
-    
-    return JSONResponse(content=data)
+#@app.get("/artikel")
+#async def get_article():
+#    file_path = "artikel.json"  # Ubah sesuai dengan path file JSON artikel Anda
+#    with open(file_path) as file:
+#        data = json.load(file)
+#    
+#    return JSONResponse(content=data)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
