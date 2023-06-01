@@ -4,13 +4,16 @@ Team CC
 
 Tak:
 29Mei 2023
-Memulai Membuat backend Hapi.js yang mengolah file machine learning berupa file .h5
+ Memulai Membuat backend Hapi.js yang mengolah file machine learning berupa file .h5
 
 30 Mei 2023
-Selesai coding setelah Mengubah  backend dari Hapi.js menjadi FastAPI yang mengolah file machine learning berupa file .h5
+ Selesai coding setelah Mengubah  backend dari Hapi.js menjadi FastAPI yang mengolah file machine learning berupa file .h5
 
-Menguji tiap endpoint pada postman
+ Menguji tiap endpoint pada postman
 
-membuat Dockerfile
+ membuat Dockerfile
 
-Deploy API percobaan ke Cloud Run
+ Deploy API percobaan ke Cloud Run
+
+01 Juni 2023
+ Membuat endpoint lokasi
