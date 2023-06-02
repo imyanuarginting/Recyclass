@@ -31,13 +31,13 @@ async def upload_photo(file: UploadFile = File(...)):
     content = await file.read()
     if len(content) > 10 * 1024 * 1024:  # 10MB
         error_message = "Ukuran gambar terlalu besar, maksimal 10MB."
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={"error": True, "message": error_message})
+        return JSONResponse(content={"error": True,"message": error_message})
 
     # Check image type
     allowed_types = ["image/jpeg", "image/png"]
     if file.content_type not in allowed_types:
         error_message = "Tipe gambar tidak didukung. Gunakan format JPEG atau PNG."
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={"error": True, "message": error_message})
+        return JSONResponse(content={"error": True,"message": error_message})
 
     image = tf.image.decode_image(content, channels=3)
     image = tf.image.resize(image, [224, 224])
@@ -47,7 +47,8 @@ async def upload_photo(file: UploadFile = File(...)):
     global classification_result
     classification_result = predictions.tolist()
 
-    return JSONResponse(content={"message": "Success to Upload"})
+    return JSONResponse(content={"error": False,"message": "Success to Upload"})
+
 
 @app.get("/classification-result")
 async def get_classification_result():
@@ -56,10 +57,10 @@ async def get_classification_result():
     if classification_result:
         result = get_highest_label(classification_result)
         classification_result = None
-        return JSONResponse(content={"result": result})
+        return JSONResponse(content={"error": False,"result": result})
     else:
         error_message = "Hasil klasifikasi tidak tersedia."
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail={"error": True, "message": error_message})
+        return JSONResponse(content={"error": True,"message": error_message})
 
 @app.get("/lokasi/{city}")
 async def get_city_data(city: str):
@@ -69,10 +70,10 @@ async def get_city_data(city: str):
 
     if city in data:
         result = data[city]
-        return JSONResponse(content=result)
+        return JSONResponse(content={"error": False,"result": result})
     else:
         error_message = "Lokasi Bank Sampah tidak ditemukan."
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={"error": True, "message": error_message})
+        return JSONResponse(content={"error": True,"message": error_message})
 
 #@app.get("/artikel")
 #async def get_article():
