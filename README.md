@@ -27,7 +27,7 @@ python main.py
 
 - **POST /upload-photo**: Upload an image for classification. The image should be sent as a form-data request with the key `file`.
 - **GET /classification-result**: Get the classification result. This endpoint will return the highest predicted label from the last uploaded image.
-
+- **GET /location**: Get the location of the Garbage Bank. This endpoint will return a list of Garbage Bank locations by region.
 ## Example
 
 Here is an example of how to use the API using cURL:
