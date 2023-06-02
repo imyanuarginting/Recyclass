@@ -29,8 +29,8 @@ def get_highest_label(predictions):
 async def upload_photo(file: UploadFile = File(...)):
     # Check image size
     content = await file.read()
-    if len(content) > 1024 * 1024:  # 1MB
-        error_message = "Ukuran gambar terlalu besar, maksimal 1MB."
+    if len(content) > 10 * 1024 * 1024:  # 10MB
+        error_message = "Ukuran gambar terlalu besar, maksimal 10MB."
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={"error": True, "message": error_message})
 
     # Check image type
@@ -47,7 +47,7 @@ async def upload_photo(file: UploadFile = File(...)):
     global classification_result
     classification_result = predictions.tolist()
 
-    return JSONResponse(content={"predictions": predictions.tolist()})
+    return JSONResponse(content={"message": "Success to Upload"})
 
 @app.get("/classification-result")
 async def get_classification_result():
