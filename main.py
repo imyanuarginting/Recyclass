@@ -30,13 +30,13 @@ async def upload_photo(file: UploadFile = File(...)):
     # Check image size
     content = await file.read()
     if len(content) > 10 * 1024 * 1024:  # 10MB
-        error_message = "Ukuran gambar terlalu besar, maksimal 10MB."
+        error_message = "Image size is too large. Maximum allowed size is 10MB."
         return JSONResponse(content={"error": True,"message": error_message})
 
     # Check image type
     allowed_types = ["image/jpeg", "image/png"]
     if file.content_type not in allowed_types:
-        error_message = "Tipe gambar tidak didukung. Gunakan format JPEG atau PNG."
+        error_message = "Unsupported image type. Please use JPEG or PNG format."
         return JSONResponse(content={"error": True,"message": error_message})
 
     image = tf.image.decode_image(content, channels=3)
@@ -64,7 +64,7 @@ async def get_classification_result():
 
 @app.get("/lokasi/{city}")
 async def get_city_data(city: str):
-    file_path = "tempat.json"  # Ubah sesuai dengan path file JSON Anda
+    file_path = "locations.json"  # Replace with the correct path to your JSON file
     with open(file_path) as file:
         data = json.load(file)
 
@@ -72,7 +72,7 @@ async def get_city_data(city: str):
         result = data[city]
         return JSONResponse(content={"error": False,"result": result})
     else:
-        error_message = "Lokasi Bank Sampah tidak ditemukan."
+        error_message = "Location not found."
         return JSONResponse(content={"error": True,"message": error_message})
 
 #@app.get("/artikel")
