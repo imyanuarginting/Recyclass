@@ -1,5 +1,5 @@
 {
-    "Jabodetabek": [
+    "jabodetabek": [
     {
         "Name": "PT Plasticpay Teknologi Daurulang",
         "lat": -6.223889302142203,
@@ -51,7 +51,7 @@
         "lon": 106.80456886644386 
     }
     ],
-    "Pekanbaru": [
+    "pekanbaru": [
         {
             "Name": "Bank Sampah Limbungan",
             "lat": 0.5641375657505787, 
@@ -68,7 +68,7 @@
             "lon": 101.51593671059179
         }
     ],
-    "Medan": [
+    "medan": [
         {
             "Name": "Medan Recycling Centre",
             "lat": 3.5935000300558375,  
@@ -95,7 +95,7 @@
             "lon": 98.66414125932538
         }
     ],
-    "Surabaya": [
+    "surabaya": [
         {
             "Name": "YAMUNIS plast",
             "lat": -7.225298868364292, 
@@ -122,7 +122,7 @@
             "lon": 112.79061187859774
         }
     ],
-    "Bali": [
+    "bali": [
         {
             "Name": "Bank Sampah Induk (BSI) Bali Bersih",
             "lat": -8.633679322033531, 
@@ -149,7 +149,7 @@
             "lon": 115.14831409393665
         }
     ],
-    "Makassar": [
+    "makassar": [
         {
             "Name": "Bank Sampah Kemuning RW17",
             "lat": -5.173067156560794, 
