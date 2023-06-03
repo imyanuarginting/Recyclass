@@ -1,177 +1,177 @@
 {
     "Jabodetabek": [
     {
-        "Nama Tempat": "PT Plasticpay Teknologi Daurulang",
+        "Name": "PT Plasticpay Teknologi Daurulang",
         "lat": -6.223889302142203,
         "lon": 106.65502579019379    
     },
     {
-        "Nama Tempat": "Rebricks Indonesia",
+        "Name": "Rebricks Indonesia",
         "lat": -6.264655329030852,
         "lon": 106.7843817359527
     },
     {
-        "Nama Tempat": "Jasa Plastindo",
+        "Name": "Jasa Plastindo",
         "lat": -6.299305959718841,
         "lon": 106.74366217071689
     },
     {
-        "Nama Tempat": "Sinar Daur Ulang Plastik",
+        "Name": "Sinar Daur Ulang Plastik",
         "lat": -6.383733813890215, 
         "lon": 106.76169542264608
     },
     {
-        "Nama Tempat": "Kita Olah Indonesia",
+        "Name": "Kita Olah Indonesia",
         "lat": -6.3058081595575795, 
         "lon": 106.99400521061908
     },
     {
-        "Nama Tempat": "Gemilang Jaya Plastik",
+        "Name": "Gemilang Jaya Plastik",
         "lat": -6.316144674312905, 
         "lon": 106.98611157993845    
     },
     {
-        "Nama Tempat": "PT. Iwan Plastik Alengka",
+        "Name": "PT. Iwan Plastik Alengka",
         "lat": -6.350824144803085, 
         "lon": 106.99073915294923
     },
     {
-        "Nama Tempat": "PT. Halengkiu Plastik Abadi",
+        "Name": "PT. Halengkiu Plastik Abadi",
         "lat": -6.380266582634852, 
         "lon": 106.75501518178461
     },
     {
-        "Nama Tempat": "JTP Jaya Tunggal Plastik",
+        "Name": "JTP Jaya Tunggal Plastik",
         "lat": -6.1452195189014915, 
         "lon": 106.71355329527726
     },
     {
-        "Nama Tempat": "Plastic Bank Indonesia",
+        "Name": "Plastic Bank Indonesia",
         "lat": -6.3426717198882105, 
         "lon": 106.80456886644386 
     }
     ],
     "Pekanbaru": [
         {
-            "Nama Tempat": "Bank Sampah Limbungan",
+            "Name": "Bank Sampah Limbungan",
             "lat": 0.5641375657505787, 
             "lon": 101.4588310952515    
         },
         {
-            "Nama Tempat": "Dalang Collection",
+            "Name": "Dalang Collection",
             "lat": 0.5274662670956014, 
             "lon": 101.47550869709715
         },
         {
-            "Nama Tempat": "UD Indo Sarana Plastik",
+            "Name": "UD Indo Sarana Plastik",
             "lat": 0.4677209684500604, 
             "lon": 101.51593671059179
         }
     ],
     "Medan": [
         {
-            "Nama Tempat": "Medan Recycling Centre",
+            "Name": "Medan Recycling Centre",
             "lat": 3.5935000300558375,  
             "lon": 98.7039666164262    
         },
         {
-            "Nama Tempat": "Daur Ulang Lestarindo",
+            "Name": "Daur Ulang Lestarindo",
             "lat": 3.5627723203729613, 
             "lon": 98.66890340105194
         },
         {
-            "Nama Tempat": "BANK SAMPAH ANYELIR",
+            "Name": "BANK SAMPAH ANYELIR",
             "lat": 3.580940995527605,  
             "lon": 98.71433241945995
         },
         {
-            "Nama Tempat": "Daur Ulang Gemilang",
+            "Name": "Daur Ulang Gemilang",
             "lat": 3.635857824171811, 
             "lon": 98.55942781815162
         },
         {
-            "Nama Tempat": "Kepul - Botot Medan",
+            "Name": "Kepul - Botot Medan",
             "lat": 3.6375709808762062, 
             "lon": 98.66414125932538
         }
     ],
     "Surabaya": [
         {
-            "Nama Tempat": "YAMUNIS plast",
+            "Name": "YAMUNIS plast",
             "lat": -7.225298868364292, 
             "lon": 112.75982610646302    
         },
         {
-            "Nama Tempat": "ERM Recycling Plastic",
+            "Name": "ERM Recycling Plastic",
             "lat": -7.367646598683065, 
             "lon": 112.64374117496273
         },
         {
-            "Nama Tempat": "Daur Ulang Botol Plastik PET",
+            "Name": "Daur Ulang Botol Plastik PET",
             "lat": -7.281961936785065, 
             "lon": 112.71261218890697
         },
         {
-            "Nama Tempat": "Pusat Daur Ulang Jambangan",
+            "Name": "Pusat Daur Ulang Jambangan",
             "lat": -7.3097952063569895, 
             "lon": 112.71648306610237
         },
         {
-            "Nama Tempat": "Pusat Pengolahan Sampah dan Kompos ITS",
+            "Name": "Pusat Pengolahan Sampah dan Kompos ITS",
             "lat": -7.2861777653363164, 
             "lon": 112.79061187859774
         }
     ],
     "Bali": [
         {
-            "Nama Tempat": "Bank Sampah Induk (BSI) Bali Bersih",
+            "Name": "Bank Sampah Induk (BSI) Bali Bersih",
             "lat": -8.633679322033531, 
             "lon": 115.17839482469078    
         },
         {
-            "Nama Tempat": "Bali PET Recycling",
+            "Name": "Bali PET Recycling",
             "lat": -8.633692505693084, 
             "lon": 115.26613278804854
         },
         {
-            "Nama Tempat": "Tempat Pengolahan Sampah Plastik Bungkulan",
+            "Name": "Tempat Pengolahan Sampah Plastik Bungkulan",
             "lat": -8.063028880183746,
             "lon": 115.15616676604908
         },
         {
-            "Nama Tempat": "ecoBali Recycling",
+            "Name": "ecoBali Recycling",
             "lat": -8.622813147338828, 
             "lon": 115.16505217590539
         },
         {
-            "Nama Tempat": "eCollabo8",
+            "Name": "eCollabo8",
             "lat": -8.60442504619237,
             "lon": 115.14831409393665
         }
     ],
     "Makassar": [
         {
-            "Nama Tempat": "Bank Sampah Kemuning RW17",
+            "Name": "Bank Sampah Kemuning RW17",
             "lat": -5.173067156560794, 
             "lon": 119.46312658437543    
         },
         {
-            "Nama Tempat": "CV Prima Jaya Plastik",
+            "Name": "CV Prima Jaya Plastik",
             "lat": -5.09173633940182, 
             "lon": 119.46800403766522
         },
         {
-            "Nama Tempat": "UPTD Pengelolaan Daur Ulang Sampah",
+            "Name": "UPTD Pengelolaan Daur Ulang Sampah",
             "lat": -5.1604419499354375, 
             "lon": 119.45737927391225
         },
         {
-            "Nama Tempat": "Clean Up Indonesia - Jasa Angkut Sampah Makassar",
+            "Name": "Clean Up Indonesia - Jasa Angkut Sampah Makassar",
             "lat": -5.192735383611467, 
             "lon": 119.46848418765276
         },
         {
-            "Nama Tempat": "CV. Hamparan Plastindo Gowa",
+            "Name": "CV. Hamparan Plastindo Gowa",
             "lat": -5.1842047372630615, 
             "lon": 119.57946467444494
         }
