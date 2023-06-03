@@ -15,7 +15,7 @@ COPY main.py .
 # Copy file model.h5 to container
 COPY model.h5 .
 
-# Copy file article.json to container
+# Copy file articles.json to container
 COPY articles.json .
 
 # Copy file tempat.json ke dalam container
