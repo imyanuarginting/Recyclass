@@ -68,12 +68,15 @@ async def get_city_data(city: str):
     with open(file_path) as file:
         data = json.load(file)
 
+    # Mengubah city menjadi lowercase
+    city = city.lower()
+
     if city in data:
         result = data[city]
-        return JSONResponse(content={"error": False,"result": result})
+        return JSONResponse(content={"error": False, "result": result})
     else:
         error_message = "Location not found."
-        return JSONResponse(content={"error": True,"message": error_message})
+        return JSONResponse(content={"error": True, "message": error_message})
 
 #@app.get("/artikel")
 #async def get_article():
