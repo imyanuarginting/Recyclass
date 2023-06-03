@@ -68,8 +68,7 @@ async def get_city_data(city: str):
     with open(file_path) as file:
         data = json.load(file)
 
-    # Mengubah city menjadi lowercase
-    city = city.lower()
+    city = city.lower()  # Convert city to lowercase
 
     if city in data:
         result = data[city]
