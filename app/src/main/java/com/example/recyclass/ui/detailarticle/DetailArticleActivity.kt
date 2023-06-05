@@ -1,7 +1,8 @@
-package com.example.recyclass
+package com.example.recyclass.ui.detailarticle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.recyclass.R
 
 class DetailArticleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

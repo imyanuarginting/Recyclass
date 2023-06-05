@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_splash_screen_continue_scene"
-    tools:context=".SplashScreenContinueActivity">
+    tools:context=".ui.splashscreen.SplashScreenContinueActivity">
 
     <ImageView
         android:id="@+id/imageView1"
