@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailArticleActivity">
+    tools:context=".ui.detailarticle.DetailArticleActivity">
 
     <ImageView
         android:id="@+id/imageView_article_detail"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:contentDescription="@string/picture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +23,7 @@
         android:layout_marginEnd="12sp"
         android:maxLines="2"
         android:text="@string/article_date"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView_article_detail" />
 
@@ -46,7 +47,7 @@
         android:layout_margin="20sp"
         android:maxLines="2"
         android:text="@string/article_desc"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/textView_article_title_layoutDetail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
