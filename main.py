@@ -57,10 +57,19 @@ async def get_classification_result():
     if classification_result:
         result = get_highest_label(classification_result)
         classification_result = None
-        return JSONResponse(content={"error": False,"result": result})
+
+        # Baca file articles.json
+        with open("articles.json") as file:
+            articles_data = json.load(file)
+
+        # Filter data berdasarkan plastic_type
+        filtered_articles = articles_data.get(result, [])
+
+        return JSONResponse(content={"error": False, "result": result, "articles": filtered_articles})
     else:
         error_message = "Hasil klasifikasi tidak tersedia."
         return JSONResponse(content={"error": True,"message": error_message})
+
 
 @app.get("/lokasi/{city}")
 async def get_city_data(city: str):
@@ -77,13 +86,7 @@ async def get_city_data(city: str):
         error_message = "Location not found."
         return JSONResponse(content={"error": True, "message": error_message})
 
-#@app.get("/artikel")
-#async def get_article():
-#    file_path = "artikel.json"  # Ubah sesuai dengan path file JSON artikel Anda
-#    with open(file_path) as file:
-#        data = json.load(file)
-#    
-#    return JSONResponse(content=data)
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
