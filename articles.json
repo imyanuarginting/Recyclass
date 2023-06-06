@@ -257,14 +257,14 @@
     }
     ],
     
-    "Other":[
+    "OTHERS":[
     {
         "url": "https://ecolife.com/recycling/plastic/how-to-recycle-plastic-7/",
         "img_url": "https://ecolife.com/wp-content/uploads/2022/12/Recycling-Plastic-7.png",
         "title": "How to Recycle Plastic #7",
         "author": "Maryruth Belsey Priebe",
         "publication_date": null,
-        "plastic_type": "Other"
+        "plastic_type": "Others"
     },
     {
         "url": "https://dirt2tidy.com.au/blog/how-to-recycle-plastic-at-home/",
@@ -272,7 +272,7 @@
         "title": "How to recycle plastic at home ?",
         "author": "admin",
         "publication_date": "2021-06-04 05:49:49",
-        "plastic_type": "Other"
+        "plastic_type": "Others"
     },
     {
         "url": "https://thehappyhousecleaning.co.uk/how-to-recycle-plastic-at-home/",
@@ -280,7 +280,7 @@
         "title": "How to recycle plastic at home",
         "author": "The Happy House Cleaning",
         "publication_date": "2022-11-09 05:49:49",
-        "plastic_type": "Other"
+        "plastic_type": "Others"
     },
     {
         "url": "https://zerowaste.id/zero-waste-lifestyle/proses-daur-ulang-plastik/",
@@ -288,7 +288,7 @@
         "title": "Tahapan Proses Daur Ulang Plastik",
         "author": "Zero Waste",
         "publication_date": null,
-        "plastic_type": "Other"
+        "plastic_type": "Others"
     },
     {
         "url": "https://www.pinhome.id/pinhome-home-service/insight/cara-mendaur-ulang-sampah-plastik/",
@@ -296,7 +296,7 @@
         "title": "7 Cara Mendaur Ulang Sampah Plastik yang Ada di Rumah\ufffc",
         "author": "Nabila Azmi",
         "publication_date": "2022-03-09 05:49:49",
-        "plastic_type": "Other"
+        "plastic_type": "Others"
     }
     ]
 }
