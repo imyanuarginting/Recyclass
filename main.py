@@ -57,10 +57,10 @@ async def get_classification_result():
     if classification_result:
         result = get_highest_label(classification_result)
         classification_result = None
-        return JSONResponse(content={"result": result})
+        return JSONResponse(content={"error": False, "result": result})
     else:
         error_message = "Classification result is not available."
-        raise HTTPException(status_code=404, detail=error_message)
+        return JSONResponse(content={"error": True, "message": error_message})
 
 
 @app.get("/locations/{city}")
@@ -84,7 +84,7 @@ async def get_city_data(ptype: str):
     with open(file_path) as file:
         data = json.load(file)
 
-    ptype = ptype.upper()  # Convert city to uppercase
+    ptype = ptype.upper()  # Convert  to uppercase
 
     if ptype in data:
         result = data[ptype]
