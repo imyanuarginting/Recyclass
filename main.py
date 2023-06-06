@@ -57,21 +57,13 @@ async def get_classification_result():
     if classification_result:
         result = get_highest_label(classification_result)
         classification_result = None
-
-        # Baca file articles.json
-        with open("articles.json") as file:
-            articles_data = json.load(file)
-
-        # Filter data berdasarkan plastic_type
-        filtered_articles = articles_data.get(result, [])
-
-        return JSONResponse(content={"error": False, "result": result, "articles": filtered_articles})
+        return JSONResponse(content={"result": result})
     else:
-        error_message = "Hasil klasifikasi tidak tersedia."
-        return JSONResponse(content={"error": True,"message": error_message})
+        error_message = "Classification result is not available."
+        raise HTTPException(status_code=404, detail=error_message)
 
 
-@app.get("/lokasi/{city}")
+@app.get("/locations/{city}")
 async def get_city_data(city: str):
     file_path = "locations.json"  # Replace with the correct path to your JSON file
     with open(file_path) as file:
@@ -84,6 +76,21 @@ async def get_city_data(city: str):
         return JSONResponse(content={"error": False, "result": result})
     else:
         error_message = "Location not found."
+        return JSONResponse(content={"error": True, "message": error_message})
+
+@app.get("/articles/{ptype}")
+async def get_city_data(ptype: str):
+    file_path = "articles.json"  # Replace with the correct path to your JSON file
+    with open(file_path) as file:
+        data = json.load(file)
+
+    ptype = ptype.upper()  # Convert city to uppercase
+
+    if ptype in data:
+        result = data[ptype]
+        return JSONResponse(content={"error": False, "result": result})
+    else:
+        error_message = "Wrong Plastic Type"
         return JSONResponse(content={"error": True, "message": error_message})
 
 
