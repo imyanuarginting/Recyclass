@@ -18,8 +18,8 @@ COPY model.h5 .
 # Copy file articles.json to container
 COPY articles.json .
 
-# Copy file tempat.json ke dalam container
+# Copy file locations.json to container
 COPY locations.json .
 
-# Menjalankan aplikasi FastAPI pada port 8080
+# Running FastAPI on port 8080
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
