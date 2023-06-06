@@ -27,7 +27,8 @@ python main.py
 
 - **POST /upload-photo**: Upload an image for classification. The image should be sent as a form-data request with the key `file`.
 - **GET /classification-result**: Get the classification result. This endpoint will return the highest predicted label from the last uploaded image.
-- **GET /location**: Get the location of the Recycling Bank. This endpoint will return a list of Recycling Bank locations by region.
+- **GET /locations**: Get the location of the Recycling Bank. This endpoint will return a list of Recycling Bank locations by region.
+- **GET /articles**: Get the articles base on plastic type. This endpoint will return a list of articles filtered by plastic type.
 ## Example
 
 Here is an example of how to use the API using cURL:
@@ -44,7 +45,14 @@ curl http://localhost:8000/classification-result
 
 3. Get the recycling bank locations by city
 ```sheel
-curl http://localhost:8000/location/pekanbaru
+curl http://localhost:8000/locations/pekanbaru
+```
+
+4. Get the articles by plastic type
+
+```sheel
+curl http://localhost:8000/articles/HDPE
+
 ```
 
 The response will contain the highest predicted label for the uploaded image.
