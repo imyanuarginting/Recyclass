@@ -1,6 +1,7 @@
 package com.example.recyclass.data.retrofit
 
 import androidx.viewbinding.BuildConfig
+import com.example.recyclass.data.dataclass.ArticleResponse
 import com.example.recyclass.data.dataclass.ImageUploadResponse
 import com.example.recyclass.data.dataclass.PlasticTypeResponse
 import okhttp3.MultipartBody
@@ -18,18 +19,27 @@ interface ApiService {
         @Part file: MultipartBody.Part
     ): Call<ImageUploadResponse>
 
-    @GET("classification-result")
+    @GET("/classification-result")
     fun getPlasticType(): Call<PlasticTypeResponse>
+
+    @GET("/articles/{ptype}")
+    suspend fun getArticles(
+        @Query("page") page: Int,
+        @Query("size") size: Int,
+        @Path("ptype") ptype: String
+    ): ArticleResponse
 }
 
 class ApiConfig {
     fun getApiService(): ApiService {
-        val loggingInterceptor = if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        }
-        else {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
-        }
+//        val loggingInterceptor = if (BuildConfig.DEBUG) {
+//            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+//        }
+//        else {
+//            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+//        }
+
+        val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
