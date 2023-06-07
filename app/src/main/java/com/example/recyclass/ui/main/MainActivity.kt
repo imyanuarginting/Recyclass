@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import com.example.recyclass.databinding.ActivityMainBinding
@@ -40,7 +41,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var viewModel: MainViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,16 +76,32 @@ class MainActivity : AppCompatActivity() {
                     requestImage
                 )
                 viewModel.uploadImage(imageMultipart)
+                val intent = Intent(this@MainActivity, ListArticleActivity::class.java)
+                intent.putExtra(ListArticleActivity.EXTRA_IMAGE, currentImagePath)
                 viewModel.success.observe(this) {
+                    Log.d("Success", it.toString())
                     if (it) {
-                        val intent = Intent(this@MainActivity, ListArticleActivity::class.java)
-                        intent.putExtra(ListArticleActivity.EXTRA_IMAGE, currentImagePath)
                         startActivity(intent)
                     }
                 }
             }
         }
     }
+
+//    override fun onStart() {
+//        super.onStart()
+//    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("MainActivity", "onStart")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("MainActivity", "onStop")
+    }
+
     private fun createTempFile(context: Context): File {
         val storageDirectory = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile("plastic $timeStamp", ".jpg", storageDirectory)

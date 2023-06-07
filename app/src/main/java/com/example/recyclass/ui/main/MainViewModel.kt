@@ -17,6 +17,7 @@ class MainViewModel : ViewModel() {
 
     fun uploadImage(image: MultipartBody.Part) {
         _success.value = false
+        Log.d("SuccessUploadImage", "jalan")
         val apiService = ApiConfig().getApiService()
         val response = apiService.uploadImage(image)
         response.enqueue(object: Callback<ImageUploadResponse> {
@@ -27,12 +28,14 @@ class MainViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
+                        Log.d("SuccessUploadImage", "jalanResponse")
                         _success.value = true
                     }
                 }
             }
 
             override fun onFailure(call: Call<ImageUploadResponse>, t: Throwable) {
+//                _success.value = true
                 Log.d(TAG, t.message.toString())
             }
         })
