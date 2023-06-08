@@ -1,6 +1,5 @@
 package com.example.recyclass.data.retrofit
 
-import androidx.viewbinding.BuildConfig
 import com.example.recyclass.data.dataclass.ArticleResponse
 import com.example.recyclass.data.dataclass.ImageUploadResponse
 import com.example.recyclass.data.dataclass.PlasticTypeResponse
@@ -26,7 +25,7 @@ interface ApiService {
     suspend fun getArticles(
         @Query("page") page: Int,
         @Query("size") size: Int,
-        @Path("ptype") ptype: String
+        @Query("ptype") ptype: String
     ): ArticleResponse
 }
 

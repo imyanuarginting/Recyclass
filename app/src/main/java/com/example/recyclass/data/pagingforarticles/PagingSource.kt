@@ -1,5 +1,6 @@
 package com.example.recyclass.data.pagingforarticles
 
+import android.util.Log
 import androidx.paging.PagingState
 import com.example.recyclass.data.dataclass.Article
 import com.example.recyclass.data.retrofit.ApiService
@@ -14,7 +15,7 @@ class PagingSource(private val apiService: ApiService) : androidx.paging.PagingS
         return try {
             val position = params.key ?: FIRST_INDEX
             val data = apiService.getArticles(position, params.loadSize, "PP").result
-
+            Log.d("PagingSource", data.toString())
             LoadResult.Page(
                 data = data,
                 prevKey = if (position == FIRST_INDEX) null else position - 1,

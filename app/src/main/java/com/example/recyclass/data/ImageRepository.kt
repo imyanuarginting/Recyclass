@@ -14,7 +14,6 @@ import retrofit2.Response
 
 class ImageRepository {
     fun uploadImage(image: MultipartBody.Part) {
-//        _success.value = false
         val apiService = ApiConfig().getApiService()
         val response = apiService.uploadImage(image)
         response.enqueue(object: Callback<ImageUploadResponse> {
@@ -25,7 +24,7 @@ class ImageRepository {
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
-//                        _success.value = true
+
                     }
                 }
             }

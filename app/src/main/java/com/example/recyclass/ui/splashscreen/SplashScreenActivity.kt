@@ -9,7 +9,6 @@ import com.example.recyclass.databinding.ActivitySplashScreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
@@ -20,6 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler().postDelayed({
             val intent = Intent(this@SplashScreenActivity, SplashScreenContinueActivity::class.java)
             startActivity(intent)
+            finish()
         }, 500)
     }
 }

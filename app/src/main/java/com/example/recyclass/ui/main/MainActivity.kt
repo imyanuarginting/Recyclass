@@ -8,7 +8,10 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.view.ViewTreeObserver
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.FileProvider
 import com.example.recyclass.databinding.ActivityMainBinding
 import com.example.recyclass.ui.listarticle.ListArticleActivity
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     ).format(System.currentTimeMillis())
     private lateinit var currentImagePath: String
     private var getImage: File? = null
+    private lateinit var splashScreenContent: ConstraintLayout
 
     private val launcherCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -76,21 +80,17 @@ class MainActivity : AppCompatActivity() {
                     requestImage
                 )
                 viewModel.uploadImage(imageMultipart)
+            }
+        }
+
+        viewModel.success.observe(this) {
+            if (it) {
                 val intent = Intent(this@MainActivity, ListArticleActivity::class.java)
                 intent.putExtra(ListArticleActivity.EXTRA_IMAGE, currentImagePath)
-                viewModel.success.observe(this) {
-                    Log.d("Success", it.toString())
-                    if (it) {
-                        startActivity(intent)
-                    }
-                }
+                startActivity(intent)
             }
         }
     }
-
-//    override fun onStart() {
-//        super.onStart()
-//    }
 
     override fun onStart() {
         super.onStart()

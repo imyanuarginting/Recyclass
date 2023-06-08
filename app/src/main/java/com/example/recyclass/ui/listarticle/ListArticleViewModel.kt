@@ -7,11 +7,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.recyclass.ArticleRepository
+import com.example.recyclass.data.ArticleRepository
 import com.example.recyclass.data.dataclass.Article
 import com.example.recyclass.data.dataclass.PlasticTypeResponse
 import com.example.recyclass.data.retrofit.ApiConfig
-import com.example.recyclass.data.retrofit.ApiService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
