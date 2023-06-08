@@ -78,21 +78,20 @@ async def get_city_data(city: str):
         error_message = "Location not found."
         return JSONResponse(content={"error": True, "message": error_message})
 
-@app.get("/articles/{ptype}")
-async def get_city_data(ptype: str):
+@app.get("/articles")
+async def get_articles(plastic_type: str):
     file_path = "articles.json"  # Replace with the correct path to your JSON file
     with open(file_path) as file:
         data = json.load(file)
 
-    ptype = ptype.upper()  # Convert  to uppercase
+    plastic_type = plastic_type.upper()  # Convert plastic type to uppercase
 
-    if ptype in data:
-        result = data[ptype]
+    if plastic_type in data:
+        result = data[plastic_type]
         return JSONResponse(content={"error": False, "result": result})
     else:
-        error_message = "Wrong Plastic Type"
+        error_message = "Invalid plastic type."
         return JSONResponse(content={"error": True, "message": error_message})
-
 
 
 if __name__ == "__main__":
