@@ -36,45 +36,45 @@ class ListArticleActivity : AppCompatActivity() {
             binding.textViewTipePlastik.text = it
         }
 
-//        layoutArticle = findViewById(R.id.layout_article)
-//        bindingLayoutArticleBinding = LayoutArticleBinding.bind(layoutArticle)
-//        val sheetBehavior = BottomSheetBehavior.from(layoutArticle)
-//
-//        bindingLayoutArticleBinding.btnArrow.setOnClickListener {
-//            if (sheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
-//                sheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-//            } else {
-//                sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-//            }
-//        }
+        layoutArticle = findViewById(R.id.layout_article)
+        bindingLayoutArticleBinding = LayoutArticleBinding.bind(layoutArticle)
+        val sheetBehavior = BottomSheetBehavior.from(layoutArticle)
 
-//        sheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-//            override fun onStateChanged(bottomSheet: android.view.View, newState: Int) {}
-//
-//            override fun onSlide(bottomSheet: android.view.View, slideOffset: Float) {
-//                bindingLayoutArticleBinding.btnArrow.rotation = (slideOffset * 180)
-//            }
-//        })
+        bindingLayoutArticleBinding.btnArrow.setOnClickListener {
+            if (sheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                sheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            } else {
+                sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
 
-//        val layoutManager = LinearLayoutManager(this)
-//        val adapter = Adapter()
-//        bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.layoutManager = layoutManager
-//        bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.adapter = adapter
-//
-//        viewModel.articles.observe(this) {
-//            adapter.submitData(lifecycle, it)
-//        }
-//
-//        adapter.onItemCallback(object : Adapter.OnItemClickCallback {
-//            override fun onItemClicked(item: Article) {
-//                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.url))
-//                startActivity(intent)
-//            }
-//        })
-//
-//        val currentImagePath = intent.getStringExtra(EXTRA_IMAGE)
-//        val image = File(currentImagePath)
-//        binding.imageViewArticleList.setImageBitmap(BitmapFactory.decodeFile(image.path))
+        sheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: android.view.View, newState: Int) {}
+
+            override fun onSlide(bottomSheet: android.view.View, slideOffset: Float) {
+                bindingLayoutArticleBinding.btnArrow.rotation = (slideOffset * 180)
+            }
+        })
+
+        val layoutManager = LinearLayoutManager(this)
+        val adapter = Adapter()
+        bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.layoutManager = layoutManager
+        bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.adapter = adapter
+
+        viewModel.articles.observe(this) {
+            adapter.submitData(lifecycle, it)
+        }
+
+        adapter.onItemCallback(object : Adapter.OnItemClickCallback {
+            override fun onItemClicked(item: Article) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.url))
+                startActivity(intent)
+            }
+        })
+
+        val currentImagePath = intent.getStringExtra(EXTRA_IMAGE)
+        val image = File(currentImagePath)
+        binding.imageViewArticleList.setImageBitmap(BitmapFactory.decodeFile(image.path))
     }
 
     override fun onDestroy() {

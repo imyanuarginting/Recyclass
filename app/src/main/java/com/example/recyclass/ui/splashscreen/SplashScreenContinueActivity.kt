@@ -21,6 +21,7 @@ class SplashScreenContinueActivity : AppCompatActivity() {
         Handler().postDelayed({
             val intent = Intent(this@SplashScreenContinueActivity, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }, 3000)
     }
 }

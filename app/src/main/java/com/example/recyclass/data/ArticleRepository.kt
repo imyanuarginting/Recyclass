@@ -1,4 +1,4 @@
-package com.example.recyclass
+package com.example.recyclass.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -12,8 +12,6 @@ import com.example.recyclass.data.retrofit.ApiService
 
 class ArticleRepository(private val apiService: ApiService) {
     fun getArticle() : LiveData<PagingData<Article>> {
-//        Log.d("Haloha", "jalan")
-//        Log.d("Halo", "jalan")
         return Pager(
             config = PagingConfig(
                 pageSize = 5
