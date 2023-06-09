@@ -14,11 +14,7 @@ import retrofit2.Response
 class MainViewModel : ViewModel() {
     private val _success = MutableLiveData<Boolean>()
     val success: LiveData<Boolean> = _success
-    var ready = false
 
-    init {
-        ready = true
-    }
     fun uploadImage(image: MultipartBody.Part) {
         _success.postValue(false)
         val apiService = ApiConfig().getApiService()
