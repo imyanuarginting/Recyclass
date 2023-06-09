@@ -1,6 +1,6 @@
 package com.example.recyclass.data.retrofit
 
-import androidx.viewbinding.BuildConfig
+import com.example.recyclass.data.dataclass.ArticleResponse
 import com.example.recyclass.data.dataclass.ImageUploadResponse
 import com.example.recyclass.data.dataclass.PlasticTypeResponse
 import okhttp3.MultipartBody
@@ -18,25 +18,34 @@ interface ApiService {
         @Part file: MultipartBody.Part
     ): Call<ImageUploadResponse>
 
-    @GET("classification-result")
+    @GET("/classification-result")
     fun getPlasticType(): Call<PlasticTypeResponse>
+
+    @GET("/articles")
+    suspend fun getArticles(
+        @Query("plastic_type") plastic_type: String,
+        @Query("page") page: Int,
+        @Query("size") size: Int
+    ): ArticleResponse
 }
 
 class ApiConfig {
     fun getApiService(): ApiService {
-        val loggingInterceptor = if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        }
-        else {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
-        }
+//        val loggingInterceptor = if (BuildConfig.DEBUG) {
+//            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+//        }
+//        else {
+//            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+//        }
+
+        val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://recyclasstrial2-qr35w5quvq-uc.a.run.app")
+            .baseUrl("https://recyclass-hsmqsadgbq-et.a.run.app")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

@@ -4,6 +4,11 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.example.recyclass.data.ArticleRepository
+import com.example.recyclass.data.dataclass.Article
 import com.example.recyclass.data.dataclass.PlasticTypeResponse
 import com.example.recyclass.data.retrofit.ApiConfig
 import retrofit2.Call
@@ -12,9 +17,17 @@ import retrofit2.Response
 
 class ListArticleViewModel : ViewModel() {
     private val _plasticType = MutableLiveData<String>()
-    private val plasticType: LiveData<String> = _plasticType
+    val plasticType: LiveData<String> = _plasticType
 
-    fun getPlasticType() : LiveData<String> {
+    private val articleRepository = ArticleRepository(ApiConfig().getApiService())
+
+    init {
+        getPlasticType()
+    }
+
+    val articles: LiveData<PagingData<Article>> = articleRepository.getArticle().cachedIn(viewModelScope)
+
+    private fun getPlasticType() {
         val apiService = ApiConfig().getApiService()
         val response = apiService.getPlasticType()
         response.enqueue(object: Callback<PlasticTypeResponse> {
@@ -36,7 +49,6 @@ class ListArticleViewModel : ViewModel() {
                 Log.d(TAG, t.message.toString())
             }
         })
-        return plasticType
     }
 
     companion object {
