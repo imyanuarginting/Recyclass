@@ -23,7 +23,6 @@ class ListArticleActivity : AppCompatActivity() {
     private lateinit var viewModel: ListArticleViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("ListActivity", "onCreate")
         super.onCreate(savedInstanceState)
         binding = ActivityListArticleBinding.inflate(layoutInflater)
         setContentView(binding.root)

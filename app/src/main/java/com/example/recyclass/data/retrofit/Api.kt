@@ -21,11 +21,11 @@ interface ApiService {
     @GET("/classification-result")
     fun getPlasticType(): Call<PlasticTypeResponse>
 
-    @GET("/articles/{ptype}")
+    @GET("/articles")
     suspend fun getArticles(
+        @Query("plastic_type") plastic_type: String,
         @Query("page") page: Int,
-        @Query("size") size: Int,
-        @Query("ptype") ptype: String
+        @Query("size") size: Int
     ): ArticleResponse
 }
 
@@ -45,7 +45,7 @@ class ApiConfig {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://recyclasstrial2-qr35w5quvq-uc.a.run.app")
+            .baseUrl("https://recyclass-hsmqsadgbq-et.a.run.app")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

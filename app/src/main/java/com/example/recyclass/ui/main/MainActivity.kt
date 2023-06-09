@@ -8,10 +8,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
-import android.view.ViewTreeObserver
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.FileProvider
 import com.example.recyclass.databinding.ActivityMainBinding
 import com.example.recyclass.ui.listarticle.ListArticleActivity
@@ -30,7 +27,6 @@ class MainActivity : AppCompatActivity() {
     ).format(System.currentTimeMillis())
     private lateinit var currentImagePath: String
     private var getImage: File? = null
-    private lateinit var splashScreenContent: ConstraintLayout
 
     private val launcherCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()

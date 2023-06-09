@@ -14,12 +14,12 @@ class PagingSource(private val apiService: ApiService) : androidx.paging.PagingS
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
         return try {
             val position = params.key ?: FIRST_INDEX
-            val data = apiService.getArticles(position, params.loadSize, "PP").result
+            val data = apiService.getArticles("PP", position, params.loadSize).result
             Log.d("PagingSource", data.toString())
             LoadResult.Page(
                 data = data,
                 prevKey = if (position == FIRST_INDEX) null else position - 1,
-                nextKey = if (data.isNullOrEmpty()) null else position + 1
+                nextKey = if (data.isEmpty()) null else position + 1
             )
         } catch (e: Exception) {
             return LoadResult.Error(e)
