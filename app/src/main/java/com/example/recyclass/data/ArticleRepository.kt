@@ -1,6 +1,5 @@
 package com.example.recyclass.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
