@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.recyclass.View
+import com.example.recyclass.SettingApplication
 import com.example.recyclass.databinding.ActivitySplashScreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        View.noActionBar(window, supportActionBar)
+        SettingApplication.noActionBar(window, supportActionBar)
 
         Handler().postDelayed({
             val intent = Intent(this@SplashScreenActivity, SplashScreenContinueActivity::class.java)

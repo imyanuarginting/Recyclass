@@ -6,7 +6,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.ActionBar
 
-object View {
+object SettingApplication {
     fun noActionBar(window: Window, supportActionBar: ActionBar?) {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {

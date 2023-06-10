@@ -5,11 +5,10 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclass.R
-import com.example.recyclass.View
+import com.example.recyclass.SettingApplication
 import com.example.recyclass.data.dataclass.Article
 import com.example.recyclass.databinding.ActivityListArticleBinding
 import com.example.recyclass.databinding.LayoutArticleBinding
@@ -27,13 +26,15 @@ class ListArticleActivity : AppCompatActivity() {
         binding = ActivityListArticleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        View.noActionBar(window, supportActionBar)
+        SettingApplication.noActionBar(window, supportActionBar)
 
-        viewModel = ListArticleViewModel()
+        val currentImagePath = intent.getStringExtra(EXTRA_IMAGE)
+        val plasticType = intent.getStringExtra(EXTRA_PLASTIC_TYPE)
+        val image = File(currentImagePath)
+        binding.imageViewArticleList.setImageBitmap(BitmapFactory.decodeFile(image.path))
+        binding.textViewTipePlastik.text = getString(R.string.plastic_type, plasticType)
 
-        viewModel.plasticType.observe(this) {
-            binding.textViewTipePlastik.text = it
-        }
+        viewModel = ListArticleViewModel(plasticType ?: "")
 
         layoutArticle = findViewById(R.id.layout_article)
         bindingLayoutArticleBinding = LayoutArticleBinding.bind(layoutArticle)
@@ -56,13 +57,9 @@ class ListArticleActivity : AppCompatActivity() {
         })
 
         val layoutManager = LinearLayoutManager(this)
-        val adapter = Adapter()
+        val adapter = Adapter(application)
         bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.layoutManager = layoutManager
         bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.adapter = adapter
-
-        viewModel.articles.observe(this) {
-            adapter.submitData(lifecycle, it)
-        }
 
         adapter.onItemCallback(object : Adapter.OnItemClickCallback {
             override fun onItemClicked(item: Article) {
@@ -71,17 +68,13 @@ class ListArticleActivity : AppCompatActivity() {
             }
         })
 
-        val currentImagePath = intent.getStringExtra(EXTRA_IMAGE)
-        val image = File(currentImagePath)
-        binding.imageViewArticleList.setImageBitmap(BitmapFactory.decodeFile(image.path))
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("ListActivity", "onDestroy")
+        viewModel.articles.observe(this) {
+            adapter.submitData(lifecycle, it)
+        }
     }
 
     companion object {
         var EXTRA_IMAGE = "image"
+        var EXTRA_PLASTIC_TYPE = "plastic_type"
     }
 }
