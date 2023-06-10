@@ -10,13 +10,13 @@ import com.example.recyclass.data.pagingforarticles.PagingSource
 import com.example.recyclass.data.retrofit.ApiService
 
 class ArticleRepository(private val apiService: ApiService) {
-    fun getArticle() : LiveData<PagingData<Article>> {
+    fun getArticle(plastic_type: String) : LiveData<PagingData<Article>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 5
             ),
             pagingSourceFactory = {
-                PagingSource(apiService)
+                PagingSource(apiService, plastic_type)
             }
         ).liveData
     }

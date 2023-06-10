@@ -1,5 +1,6 @@
 package com.example.recyclass.ui.listarticle
 
+import android.app.Application
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -8,10 +9,11 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recyclass.R
 import com.example.recyclass.data.dataclass.Article
 import com.example.recyclass.databinding.LayoutItemBinding
 
-class Adapter : PagingDataAdapter<Article, Adapter.ViewHolder>(diffCallback = diffCallback) {
+class Adapter(private val application: Application) : PagingDataAdapter<Article, Adapter.ViewHolder>(diffCallback = diffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
@@ -23,7 +25,8 @@ class Adapter : PagingDataAdapter<Article, Adapter.ViewHolder>(diffCallback = di
             .into(holder.imageView)
         with(holder) {
             title.text = data?.title
-            desc.text = data?.author
+            date.text = data?.publication_date ?: "-"
+            author.text = application.getString(R.string.article_author, data?.author)
             itemView.setOnClickListener {
                 onItemClickCallback.onItemClicked(data!!)
             }
@@ -33,7 +36,8 @@ class Adapter : PagingDataAdapter<Article, Adapter.ViewHolder>(diffCallback = di
     class ViewHolder(binding: LayoutItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val imageView: ImageView = binding.imageViewArticleLayoutItem
         val title: TextView = binding.textViewArticleTitleLayoutItem
-        val desc: TextView = binding.textViewArticleDescLayoutItem
+        val date: TextView = binding.textViewArticleDateLayoutItem
+        val author: TextView = binding.textViewArticleAuthorLayoutItem
     }
 
     lateinit var onItemClickCallback: OnItemClickCallback

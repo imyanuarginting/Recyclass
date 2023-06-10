@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.recyclass.View
+import com.example.recyclass.SettingApplication
 import com.example.recyclass.databinding.ActivitySplashScreenContinueBinding
-import com.example.recyclass.ui.main.MainActivity
+import com.example.recyclass.ui.camera.CameraActivity
 
 class SplashScreenContinueActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenContinueBinding
@@ -16,10 +16,10 @@ class SplashScreenContinueActivity : AppCompatActivity() {
         binding = ActivitySplashScreenContinueBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        View.noActionBar(window, supportActionBar)
+        SettingApplication.noActionBar(window, supportActionBar)
 
         Handler().postDelayed({
-            val intent = Intent(this@SplashScreenContinueActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashScreenContinueActivity, CameraActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000)
