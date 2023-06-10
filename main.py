@@ -63,7 +63,7 @@ async def get_classification_result():
         return JSONResponse(content={"error": True, "message": error_message})
 
 
-@app.get("/locations/{city}")
+@app.get("/locations/")
 async def get_city_data(city: str):
     file_path = "locations.json"  # Replace with the correct path to your JSON file
     with open(file_path) as file:
