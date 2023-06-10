@@ -5,9 +5,22 @@ Following are the steps for building an image classification using Transfer Lear
 ## Installation
 
 1. You need to import the required libraries. The following libraries are needed (Note: some of the libraries below are optional)
-```sheel
-git clone -b Recyclass-API https://github.com/imyanuarginting/Recyclass.git
- ```
+```
+import os
+import zipfile
+from pathlib import Path
+import imghdr
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.models import Model, Sequential
+from tensorflow.keras import layers
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.utils import image_dataset_from_directory
+import numpy as np
+from google.colab import files
+from tensorflow.keras.utils import load_img, img_to_array
+```
 2. Install the required dependencies:
 ```sheel
 pip install -r requirements.txt
