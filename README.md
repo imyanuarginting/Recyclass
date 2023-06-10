@@ -4,7 +4,7 @@ Following are the steps for building an image classification using Transfer Lear
 
 ## Installation
 
-1. Clone the repository: 
+1. You need to import the required libraries. The following libraries are needed (Note: some of the libraries below are optional)
 ```sheel
 git clone -b Recyclass-API https://github.com/imyanuarginting/Recyclass.git
  ```
