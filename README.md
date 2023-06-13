@@ -51,30 +51,47 @@ for filepath in Path(val_dir).rglob("*"):
     elif img_type not in img_type_accepted:
       print(f'{filepath} is a {img_type}, not accepted by TensorFlow')
 ```
-5. Here is the code to check the total of images
+5. Here is the code to check the total of the training and validation images
 ```
 train_dir = os.path.join(base_dir, 'train')
 val_dir = os.path.join(base_dir, 'val')
 ```
 ```
-hdpe_dir = os.path.join(train_dir, 'hdpe')
-ldpe_dir = os.path.join(train_dir, 'ldpe')
-others_dir = os.path.join(train_dir, 'others')
-pet_dir = os.path.join(train_dir, 'pet')
-pp_dir = os.path.join(train_dir, 'pp')
-ps_dir = os.path.join(train_dir, 'ps')
-pvc_dir = os.path.join(train_dir, 'pvc')
+hdpe_train_dir = os.path.join(train_dir, 'hdpe')
+ldpe_train_dir = os.path.join(train_dir, 'ldpe')
+others_train_dir = os.path.join(train_dir, 'others')
+pet_train_dir = os.path.join(train_dir, 'pet')
+pp_train_dir = os.path.join(train_dir, 'pp')
+ps_train_dir = os.path.join(train_dir, 'ps')
+pvc_train_dir = os.path.join(train_dir, 'pvc')
 ```
 ```
-print('total training HDPE images:', len(os.listdir(hdpe_dir)))
-print('total training LDPE images:', len(os.listdir(ldpe_dir)))
-print('total training Others images:', len(os.listdir(others_dir)))
-print('total training PET images:', len(os.listdir(pet_dir)))
-print('total training PP images:', len(os.listdir(pp_dir)))
-print('total training PS images:', len(os.listdir(ps_dir)))
-print('total training PVC images:', len(os.listdir(pvc_dir)))
+hdpe_val_dir = os.path.join(val_dir, 'hdpe')
+ldpe_val_dir = os.path.join(val_dir, 'ldpe')
+others_val_dir = os.path.join(val_dir, 'others')
+pet_val_dir = os.path.join(val_dir, 'pet')
+pp_val_dir = os.path.join(val_dir, 'pp')
+ps_val_dir = os.path.join(val_dir, 'ps')
+pvc_val_dir = os.path.join(val_dir, 'pvc')
 ```
-
+```
+print('total training HDPE images:', len(os.listdir(hdpe_train_dir)))
+print('total training LDPE images:', len(os.listdir(ldpe_train_dir)))
+print('total training Others images:', len(os.listdir(others_train_dir)))
+print('total training PET images:', len(os.listdir(pet_train_dir)))
+print('total training PP images:', len(os.listdir(pp_train_dir)))
+print('total training PS images:', len(os.listdir(ps_train_dir)))
+print('total training PVC images:', len(os.listdir(pvc_train_dir)))
+```
+```
+print('total validation HDPE images:', len(os.listdir(hdpe_val_dir)))
+print('total validation LDPE images:', len(os.listdir(ldpe_val_dir)))
+print('total validation Others images:', len(os.listdir(others_val_dir)))
+print('total validation PET images:', len(os.listdir(pet_val_dir)))
+print('total validation PP images:', len(os.listdir(pp_val_dir)))
+print('total validation PS images:', len(os.listdir(ps_val_dir)))
+print('total validation PVC images:', len(os.listdir(pvc_val_dir)))
+```
 
 
 ## Usage
