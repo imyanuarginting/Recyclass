@@ -100,8 +100,7 @@ async def get_articles_data(plastic_type: str, page: int = 1, size: int = 10):
         result = articles[start_index:end_index]
 
         if len(result) == 0:
-            error_message = "No more articles available."
-            return JSONResponse(content={"error": True, "message": error_message})
+            return JSONResponse(content={"error": True, "result": []})
 
         return JSONResponse(content={"error": False, "result": result})
     else:
