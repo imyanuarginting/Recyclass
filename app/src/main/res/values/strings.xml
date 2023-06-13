@@ -12,4 +12,8 @@
     <string name="gallery">Galeri</string>
     <string name="upload">Unggah</string>
     <string name="next">Lanjut</string>
+    <string name="retry">Ulang</string>
+    <string name="success_to_detect">Proses pendeteksian berhasil</string>
+    <string name="failed_to_detect">Terjadi kesalahan saat memproses pendeteksian: %s</string>
+    <string name="arrow">expand or un-expand article list box</string>
 </resources>
