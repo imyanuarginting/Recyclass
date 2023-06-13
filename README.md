@@ -134,10 +134,84 @@ print(pp_val_files[:10])
 ps_val_files = os.listdir(ps_val_dir)
 print(ps_val_files[:10])
 
-pvc_val_files = os.listdir(pvc_train_dir)
+pvc_val_files = os.listdir(pvc_val_dir)
 print(pvc_val_files[:10])
 ```
+7. Check the training and validation images
+```
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 
+nrows = 7
+ncols = 7
+
+pic_index = 0
+
+fig = plt.gcf()
+fig.set_size_inches(ncols * 7, nrows * 5)
+
+pic_index += 7
+hdpe = [os.path.join(hdpe_train_dir, fname) 
+          for fname in hdpe_train_files[pic_index-7:pic_index]]
+ldpe = [os.path.join(ldpe_train_dir, fname) 
+          for fname in ldpe_train_files[pic_index-7:pic_index]]
+others = [os.path.join(others_train_dir, fname) 
+          for fname in others_train_files[pic_index-7:pic_index]]
+pet = [os.path.join(pet_train_dir, fname) 
+          for fname in pet_train_files[pic_index-7:pic_index]]
+pp = [os.path.join(pp_train_dir, fname) 
+          for fname in pp_train_files[pic_index-7:pic_index]]
+ps = [os.path.join(ps_train_dir, fname) 
+          for fname in ps_train_files[pic_index-7:pic_index]]
+pvc = [os.path.join(pvc_train_dir, fname) 
+          for fname in pvc_train_files[pic_index-7:pic_index]]
+
+for i, img_path in enumerate(hdpe + ldpe + others + pet + pp + ps + pvc):
+  sp = plt.subplot(nrows, ncols, i + 1)
+  sp.axis('On')
+
+  img = mpimg.imread(img_path)
+  plt.imshow(img)
+
+plt.show()
+```
+```
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+nrows = 7
+ncols = 7
+
+pic_index = 0
+
+fig = plt.gcf()
+fig.set_size_inches(ncols * 7, nrows * 5)
+
+pic_index += 7
+hdpe = [os.path.join(hdpe_val_dir, fname) 
+          for fname in hdpe_val_files[pic_index-7:pic_index]]
+ldpe = [os.path.join(ldpe_val_dir, fname) 
+          for fname in ldpe_val_files[pic_index-7:pic_index]]
+others = [os.path.join(others_val_dir, fname) 
+          for fname in others_val_files[pic_index-7:pic_index]]
+pet = [os.path.join(pet_val_dir, fname) 
+          for fname in pet_val_files[pic_index-7:pic_index]]
+pp = [os.path.join(pp_val_dir, fname) 
+          for fname in pp_val_files[pic_index-7:pic_index]]
+ps = [os.path.join(ps_val_dir, fname) 
+          for fname in ps_val_files[pic_index-7:pic_index]]
+pvc = [os.path.join(pvc_val_dir, fname) 
+          for fname in pvc_val_files[pic_index-7:pic_index]]
+
+for i, img_path in enumerate(hdpe + ldpe + others + pet + pp + ps + pvc):
+  sp = plt.subplot(nrows, ncols, i + 1)
+  sp.axis('Off')
+
+  img = mpimg.imread(img_path)
+  plt.imshow(img)
+
+plt.show()
+```
 
 
 ## Usage
