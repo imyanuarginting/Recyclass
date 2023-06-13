@@ -148,7 +148,7 @@ ncols = 7
 pic_index = 0
 
 fig = plt.gcf()
-fig.set_size_inches(ncols * 7, nrows * 5)
+fig.set_size_inches(ncols * 7, nrows * 7)
 
 pic_index += 7
 hdpe = [os.path.join(hdpe_train_dir, fname) 
@@ -185,7 +185,7 @@ ncols = 7
 pic_index = 0
 
 fig = plt.gcf()
-fig.set_size_inches(ncols * 7, nrows * 5)
+fig.set_size_inches(ncols * 7, nrows * 7)
 
 pic_index += 7
 hdpe = [os.path.join(hdpe_val_dir, fname) 
@@ -212,6 +212,43 @@ for i, img_path in enumerate(hdpe + ldpe + others + pet + pp + ps + pvc):
 
 plt.show()
 ```
+8. Initialize base model using Transfer Learning (MobileNetV2)
+```
+from tensorflow.keras.applications import MobileNetV2
+
+base_model = MobileNetV2(weights='imagenet',
+                       include_top=False,
+                       input_shape=(224, 224, 3))
+
+base_model.trainable = False
+
+base_model.summary()
+```
+9. Create variables to make it easy to set hyperparameters
+```
+DENSE_LAYER = 32
+DROPOUT_LAYER = 0.1
+```
+10. Add some layers in the output layer section
+```
+from tensorflow.keras.models import Model, Sequential
+from tensorflow.keras import layers
+
+model = Sequential([
+    layers.Rescaling(1.0/255.0, input_shape=(224, 224, 3)),
+    layers.RandomFlip(mode='horizontal'),
+    base_model,
+    layers.Flatten(),
+    layers.Dense(DENSE_LAYER, activation='relu'),
+    layers.Dropout(DROPOUT_LAYER),
+    layers.Dense(7, activation='softmax')
+])
+
+model.summary()
+```
+
+
+
 
 
 ## Usage
