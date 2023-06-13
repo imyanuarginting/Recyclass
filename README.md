@@ -2,25 +2,60 @@
 
 Following are the steps for building an image classification using Transfer Learning (MobileNetV2)
 
-## Installation
+## Steps
 
-1. you need to save the Recyclass.zip file to google drive. Adjust the directory path with the code below
+1. Download Recyclass.zip from this repository
+```
+!git clone https://github.com/imyanuarginting/Recyclass.git
+```
+2. Extract the Recyclass.zip file from the repository downloaded previously
 ```
 import os
 import zipfile
 
-zip_ref = zipfile.ZipFile('drive/MyDrive/Recyclass/Recyclass.zip', 'r')
+zip_ref = zipfile.ZipFile('Recyclass/Recyclass.zip', 'r')
 zip_ref.extractall("tmp/")
 zip_ref.close()
 
 base_dir = 'tmp/Recyclass'
 ```
-2. Install the required dependencies:
-```sheel
-pip install -r requirements.txt
+3. Import some libraries to check whether TensorFlow supports the format of the images or not
+```
+from pathlib import Path
+import imghdr
+```
+4. Here is the code to check the format of the images supported by TensorFlow
+```
+train_dir = os.path.join(base_dir, 'train')
+image_extensions = ['.png', '.jpg']
+
+img_type_accepted = ['jpeg', 'png', 'gif', 'bmp', 'jpg']
+for filepath in Path(train_dir).rglob("*"):
+  if filepath.suffix.lower() in image_extensions:
+    img_type = imghdr.what(filepath)
+    if img_type is None:
+      print(f'{filepath} is not an image')
+    elif img_type not in img_type_accepted:
+      print(f'{filepath} is a {img_type}, not accepted by TensorFlow')
+```
+```
+val_dir = os.path.join(base_dir, 'val')
+image_extensions = ['.png', '.jpg']
+
+img_type_accepted = ['jpeg', 'png', 'gif', 'bmp', 'jpg']
+for filepath in Path(val_dir).rglob("*"):
+  if filepath.suffix.lower() in image_extensions:
+    img_type = imghdr.what(filepath)
+    if img_type is None:
+      print(f'{filepath} is not an image')
+    elif img_type not in img_type_accepted:
+      print(f'{filepath} is a {img_type}, not accepted by TensorFlow')
 ```
 
-3. Download the pre-trained model weights (`model.h5`) and place it in the same directory as `main.py`.
+
+
+
+
 
 ## Usage
 
