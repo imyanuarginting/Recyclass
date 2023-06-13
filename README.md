@@ -4,22 +4,16 @@ Following are the steps for building an image classification using Transfer Lear
 
 ## Installation
 
-1. You need to import the required libraries. The following libraries are needed (Note: some of the libraries below are optional)
+1. you need to save the Recyclass.zip file to google drive. Adjust the directory path with the code below
 ```
 import os
 import zipfile
-from pathlib import Path
-import imghdr
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.models import Model, Sequential
-from tensorflow.keras import layers
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.utils import image_dataset_from_directory
-import numpy as np
-from google.colab import files
-from tensorflow.keras.utils import load_img, img_to_array
+
+zip_ref = zipfile.ZipFile('drive/MyDrive/Recyclass/Recyclass.zip', 'r')
+zip_ref.extractall("tmp/")
+zip_ref.close()
+
+base_dir = 'tmp/Recyclass'
 ```
 2. Install the required dependencies:
 ```sheel
