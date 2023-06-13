@@ -24,7 +24,7 @@ base_dir = 'tmp/Recyclass'
 from pathlib import Path
 import imghdr
 ```
-4. Here is the code to check the format of the images supported by TensorFlow
+4. Check the format of the images supported by TensorFlow
 ```
 train_dir = os.path.join(base_dir, 'train')
 image_extensions = ['.png', '.jpg']
@@ -51,7 +51,7 @@ for filepath in Path(val_dir).rglob("*"):
     elif img_type not in img_type_accepted:
       print(f'{filepath} is a {img_type}, not accepted by TensorFlow')
 ```
-5. Here is the code to check the total of the training and validation images
+5. Check the total of the training and validation images
 ```
 train_dir = os.path.join(base_dir, 'train')
 val_dir = os.path.join(base_dir, 'val')
@@ -92,6 +92,52 @@ print('total validation PP images:', len(os.listdir(pp_val_dir)))
 print('total validation PS images:', len(os.listdir(ps_val_dir)))
 print('total validation PVC images:', len(os.listdir(pvc_val_dir)))
 ```
+6. Check the name of the training and validation images
+```
+hdpe_train_files = os.listdir(hdpe_train_dir)
+print(hdpe_files[:10])
+
+ldpe_train_files = os.listdir(ldpe_train_dir)
+print(ldpe_files[:10])
+
+others_train_files = os.listdir(others_train_dir)
+print(others_files[:10])
+
+pet_train_files = os.listdir(pet_train_dir)
+print(pet_files[:10])
+
+pp_train_files = os.listdir(pp_train_dir)
+print(pp_files[:10])
+
+ps_train_files = os.listdir(ps_train_dir)
+print(ps_files[:10])
+
+pvc_train_files = os.listdir(pvc_train_dir)
+print(pvc_files[:10])
+```
+```
+hdpe_val_files = os.listdir(hdpe_val_dir)
+print(hdpe_files[:10])
+
+ldpe_val_files = os.listdir(ldpe_val_dir)
+print(ldpe_files[:10])
+
+others_val_files = os.listdir(others_val_dir)
+print(others_files[:10])
+
+pet_val_files = os.listdir(pet_val_dir)
+print(pet_files[:10])
+
+pp_val_files = os.listdir(pp_val_dir)
+print(pp_files[:10])
+
+ps_val_files = os.listdir(ps_val_dir)
+print(ps_files[:10])
+
+pvc_val_files = os.listdir(pvc_train_dir)
+print(pvc_files[:10])
+```
+
 
 
 ## Usage
