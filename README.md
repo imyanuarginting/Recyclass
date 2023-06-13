@@ -246,10 +246,74 @@ model = Sequential([
 
 model.summary()
 ```
+11. Initialize optimizer, loss, and metrics
+```
+from tensorflow.keras.optimizers import Adam
 
+model.compile(optimizer=Adam(learning_rate=0.001),
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+```
+12. Create another variables to make it easy to set hyperparameters
+```
+BATCH_SIZE = 16
+IMAGE_SIZE = (224, 224)
+```
+13. Load image dataset from a directory
+```
+from tensorflow.keras.utils import image_dataset_from_directory
 
+train = image_dataset_from_directory(
+    directory=train_dir,
+    label_mode='categorical',
+    color_mode='rgb',
+    batch_size=BATCH_SIZE,
+    image_size=IMAGE_SIZE,
+    shuffle=True,
+    seed=42)
 
+val = image_dataset_from_directory(
+    directory=val_dir,
+    label_mode='categorical',
+    color_mode='rgb',
+    batch_size=BATCH_SIZE,
+    image_size=IMAGE_SIZE,
+    shuffle=False)
+```
+14. Train model
+```
+history = model.fit(
+    train,
+    validation_data=val,
+    epochs=10,
+    verbose=2)
+```
+15. Check training and validation accuracy and training and validation loss
+```
+import matplotlib.pyplot as plt
 
+acc = history.history['accuracy']
+val_acc = history.history['val_accuracy']
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+
+epochs_acc = range(len(acc))
+epochs_loss = range(len(loss))
+
+fig, (acc_fig, loss_fig) = plt.subplots(1, 2, figsize=(17, 5))
+
+acc_fig.plot(epochs_acc, acc, '#800000', label='Training accuracy')
+acc_fig.plot(epochs_acc, val_acc, '#000080', label='Validation accuracy')
+acc_fig.set_title('Training and validation accuracy')
+acc_fig.legend(["Training", "Validation"], loc ="lower right")
+
+loss_fig.plot(epochs_loss, loss, '#800000', label='Training loss')
+loss_fig.plot(epochs_loss, val_loss, '#000080', label='Validation loss')
+loss_fig.set_title('Training and validation loss')
+loss_fig.legend(["Training", "Validation"], loc ="upper right")
+
+plt.show()
+```
 
 ## Usage
 
