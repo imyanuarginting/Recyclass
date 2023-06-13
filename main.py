@@ -55,13 +55,18 @@ async def get_classification_result():
     global classification_result
 
     if classification_result:
-        result = get_highest_label(classification_result)
-        classification_result = None
-        return JSONResponse(content={"error": False, "result": result})
+        highest_prediction = max(classification_result[0])
+        if highest_prediction < 0.8:
+            classification_result = None
+            error_message = "No Plastic Found"
+            return JSONResponse(content={"error": True, "message": error_message})
+        else:
+            result = get_highest_label(classification_result)
+            classification_result = None
+            return JSONResponse(content={"error": False, "result": result})
     else:
         error_message = "Classification result is not available."
         return JSONResponse(content={"error": True, "message": error_message})
-
 
 @app.get("/locations/")
 async def get_city_data(city: str):
@@ -80,11 +85,11 @@ async def get_city_data(city: str):
 
 @app.get("/articles/")
 async def get_articles_data(plastic_type: str, page: int = 1, size: int = 10):
-    file_path = "articles.json"  # Ganti dengan path yang benar ke file JSON Anda
+    file_path = "articles.json"  # Replace with the correct path to your JSON file
     with open(file_path) as file:
         data = json.load(file)
 
-    plastic_type = plastic_type.upper()  # Convert ke huruf besar (uppercase)
+    plastic_type = plastic_type.upper()  # Convert to uppercase
 
     if plastic_type in data:
         articles = data[plastic_type]
