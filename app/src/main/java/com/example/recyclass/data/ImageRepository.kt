@@ -11,59 +11,65 @@ import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.concurrent.Executors
 
 class ImageRepository {
+    private val executor = Executors.newSingleThreadExecutor()
     private val indicator = MediatorLiveData<Indicator<String>>()
 
     fun uploadImage(image: MultipartBody.Part) : LiveData<Indicator<String>> {
         indicator.value = Indicator.Loading
         val apiService = ApiConfig().getApiService()
-        val response = apiService.uploadImage(image)
-        response.enqueue(object: Callback<ImageUploadResponse> {
-            override fun onResponse(
-                call: Call<ImageUploadResponse>,
-                response: Response<ImageUploadResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val responseBody = response.body()
-                    if (responseBody != null) {
-                        getPlasticType()
+        executor.execute {
+            val response = apiService.uploadImage(image)
+            response.enqueue(object: Callback<ImageUploadResponse> {
+                override fun onResponse(
+                    call: Call<ImageUploadResponse>,
+                    response: Response<ImageUploadResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody != null) {
+                            getPlasticType()
+                        }
                     }
                 }
-            }
 
-            override fun onFailure(call: Call<ImageUploadResponse>, t: Throwable) {
-                indicator.value = Indicator.Error(t.message.toString())
-                Log.d(ListArticleViewModel.TAG, t.message.toString())
-            }
-        })
+                override fun onFailure(call: Call<ImageUploadResponse>, t: Throwable) {
+                    indicator.value = Indicator.Error(t.message.toString())
+                    Log.d(ListArticleViewModel.TAG, t.message.toString())
+                }
+            })
+        }
         return indicator
     }
 
     fun getPlasticType() {
         indicator.value = Indicator.Loading
         val apiService = ApiConfig().getApiService()
-        val response = apiService.getPlasticType()
-        response.enqueue(object: Callback<PlasticTypeResponse> {
-            override fun onResponse(
-                call: Call<PlasticTypeResponse>,
-                response: Response<PlasticTypeResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val responseBody = response.body()
-                    if (responseBody != null) {
-                        if (!responseBody.error) {
-                            indicator.value = Indicator.Success(responseBody.result)
+        executor.execute {
+            val response = apiService.getPlasticType()
+            response.enqueue(object: Callback<PlasticTypeResponse> {
+                override fun onResponse(
+                    call: Call<PlasticTypeResponse>,
+                    response: Response<PlasticTypeResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody != null) {
+                            if (!responseBody.error) {
+                                indicator.value = Indicator.Success(responseBody.result)
+                            }
                         }
                     }
                 }
-            }
 
-            override fun onFailure(call: Call<PlasticTypeResponse>, t: Throwable) {
-                indicator.value = Indicator.Error(t.message.toString())
-                Log.d(ListArticleViewModel.TAG, t.message.toString())
-            }
-        })
+                override fun onFailure(call: Call<PlasticTypeResponse>, t: Throwable) {
+                    indicator.value = Indicator.Error(t.message.toString())
+                    Log.d(ListArticleViewModel.TAG, t.message.toString())
+                }
+            })
+        }
     }
 }
 
