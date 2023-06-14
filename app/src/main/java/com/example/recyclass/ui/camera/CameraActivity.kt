@@ -32,6 +32,7 @@ class CameraActivity : AppCompatActivity() {
     private lateinit var viewModel: CameraViewModel
     private lateinit var currentImagePath: String
     private lateinit var getImage: File
+    private var imageIsReady = 0
     private var plasticType = ""
     private val timeStamp = SimpleDateFormat(
         TIME_STAMP_FORMAT,
@@ -45,6 +46,7 @@ class CameraActivity : AppCompatActivity() {
             val image = File(currentImagePath)
             image.let {
                 getImage = it
+                imageIsReady = 1
                 binding.imageView.setImageBitmap(BitmapFactory.decodeFile(it.path))
             }
         }
@@ -57,6 +59,7 @@ class CameraActivity : AppCompatActivity() {
             val image = result.data?.data as Uri
             image.let {
                 getImage = uriToFile(it, this)
+                imageIsReady = 1
                 currentImagePath = getImage.absolutePath
                 binding.imageView.setImageURI(it)
             }
@@ -96,7 +99,7 @@ class CameraActivity : AppCompatActivity() {
         }
 
         binding.btnUpload.setOnClickListener {
-            if (getImage != null) {
+            if (imageIsReady == 1) {
                 val image = getImage
                 val requestImage = image.asRequestBody("image/jpeg".toMediaType())
                 val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
@@ -107,15 +110,24 @@ class CameraActivity : AppCompatActivity() {
                 viewModel.uploadImage(imageMultipart).observe(this) {
                     when (it) {
                         is Indicator.Success -> {
-                            with(binding) {
-                                progressBarCamera.visibility = View.GONE
-                                btnNext.isEnabled = true
-                                btnCamera.isEnabled = false
-                                btnGallery.isEnabled = false
-                                btnUpload.isEnabled = false
+                            if (it.plasticType == "No Plastic Found") {
+                                with(binding) {
+                                    progressBarCamera.visibility = View.GONE
+                                    imageView.setImageResource(R.drawable.placeholder_picture)
+                                }
+                                imageIsReady = 0
                             }
-                            plasticType = it.plasticType
-                            Toast.makeText(this, getString(R.string.success_to_detect), Toast.LENGTH_SHORT).show()
+                            else {
+                                with(binding) {
+                                    progressBarCamera.visibility = View.GONE
+                                    btnNext.isEnabled = true
+                                    btnCamera.isEnabled = false
+                                    btnGallery.isEnabled = false
+                                    btnUpload.isEnabled = false
+                                }
+                                plasticType = it.plasticType
+                                Toast.makeText(this, getString(R.string.success_to_detect), Toast.LENGTH_SHORT).show()
+                            }
                         }
                         is Indicator.Loading -> {
                             binding.progressBarCamera.visibility = View.VISIBLE
@@ -126,6 +138,9 @@ class CameraActivity : AppCompatActivity() {
                         }
                     }
                 }
+            }
+            else {
+                Toast.makeText(this, getString(R.string.insert_image_first), Toast.LENGTH_SHORT).show()
             }
         }
 

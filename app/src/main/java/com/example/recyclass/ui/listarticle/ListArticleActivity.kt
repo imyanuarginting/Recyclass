@@ -59,7 +59,10 @@ class ListArticleActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         val adapter = Adapter(application)
         bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.layoutManager = layoutManager
-        bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.adapter = adapter
+        bindingLayoutArticleBinding.recyclerViewArticleLayoutArticle.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = LoadingAdapter { adapter.retry() } ,
+            footer = LoadingAdapter { adapter.retry() }
+        )
 
         adapter.onItemCallback(object : Adapter.OnItemClickCallback {
             override fun onItemClicked(item: Article) {
