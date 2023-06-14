@@ -59,7 +59,7 @@ async def get_classification_result():
         if highest_prediction < 0.8:
             classification_result = None
             error_message = "No Plastic Found"
-            return JSONResponse(content={"error": True, "result": error_message})
+            return JSONResponse(content={"error": False, "result": error_message})
         else:
             result = get_highest_label(classification_result)
             classification_result = None
