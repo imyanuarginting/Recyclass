@@ -93,11 +93,11 @@ curl -X GET http://localhost:8000/classification-result
                 "message": "Classification result is not available."
             }
 
-## Locations [/locations/{city}]
+## Locations [/locations/]
 
 ### Get City Data [GET]
 ```sheel
-curl -X GET http://localhost:8000/locations/{city}
+curl -X GET http://localhost:8000/locations/?city=name_place
 
 ```
 
@@ -133,19 +133,19 @@ curl -X GET http://localhost:8000/locations/{city}
                 "message": "Location not found."
             }
 
-## Articles [/articles/{ptype}]
+## Articles [/articles/]
 
 ### Get Articles [GET]
 
 ```sheel
-curl -X GET http://localhost:8000/articles/{ptype}
+curl -X GET http://localhost:8000/articles/?plastic_type=name_type_plastic
 
 
 ```
 
 
 + Parameters
-    + ptype (string, required) - The plastic type
+    + plastic_type (string, required) - The plastic type
 
 + Response (application/json)
 
