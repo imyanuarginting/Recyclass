@@ -345,3 +345,7 @@ for fn in uploaded.keys():
 ```
 model.save('Recyclass using MobileNetV2.h5')
 ```
+
+## License
+
+This project is licensed under the terms of the Team C23-PS296 - Capstone Project.
