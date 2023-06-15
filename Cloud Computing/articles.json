@@ -1,0 +1,302 @@
+{
+    "PET":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-pet-plastic-1/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/How-to-Recycle-PET.png",
+        "title": "How to Recycle PET (Plastic #1): Step-by-Step Guide",
+        "author": "Sande Tamm",
+        "publication_date": null,
+        "plastic_type": "PET"
+    },
+    {
+        "url": "https://ssfs.recyclist.co/guide/1-plastic-pet/?embeddedguide=true",
+        "img_url": "https://hq2.recyclist.co/wp-content/uploads/sites/2/2015/02/600x600-no1-plastic-300x300.jpg",
+        "title": "South San Francisco Scavenger Recycling Guide",
+        "author": "SSFS",
+        "publication_date": null,
+        "plastic_type": "PET"
+    },
+    {
+        "url": "https://everydayrecycler.com/plastic-number-1-pet/",
+        "img_url": "https://everydayrecycler.com/wp-content/uploads/2020/02/plastic-number-1-new.jpg",
+        "title": "Plastic Numbers Guide – Plastic No 1 – Polyethylene terephthalate or PET",
+        "author": "Everday Recycler",
+        "publication_date": null,
+        "plastic_type": "PET"
+    },
+    {
+        "url": "https://www.plasticexpert.co.uk/pet-recycling/",
+        "img_url": "https://www.plasticexpert.co.uk/wp-content/uploads/2021/09/Depositphotos_3266911_s-2019.jpg",
+        "title": "PET Recycling",
+        "author": "Plastic Expert",
+        "publication_date": null,
+        "plastic_type": "PET"
+    },
+    {
+        "url": "https://www.repetco.com/how-is-pet-recycled/",
+        "img_url": "https://www.repetco.com/wp-content/uploads/2020/12/demanda-reciclaje-PET-scaled.jpg",
+        "title": "How is PET recycled?",
+        "author": "REPETCO",
+        "publication_date": null,
+        "plastic_type": "PET"
+    }
+    ],
+    
+    "HDPE":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-hdpe-plastic-2/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/Recycling-HDPE-Plastic-2.png",
+        "title": "How to Recycle HDPE (Plastic #2)",
+        "author": "Maryruth Belsey Priebe",
+        "publication_date": null,
+        "plastic_type": "HDPE"
+    },
+    {
+        "url": "https://everydayrecycler.com/plastic-number-2-hdpe/",
+        "img_url": "https://everydayrecycler.com/wp-content/uploads/2020/02/plastic-number-2-main.jpg",
+        "title": "Plastic Numbers Guide – Plastic No 2 – HDPE – High-density Polyethylene",
+        "author": "Everyday Recycler",
+        "publication_date": null,
+        "plastic_type": "HDPE"
+    },
+    {
+        "url": "https://containerfaqs.com/plastic-number-2-hdpe-recyclable/",
+        "img_url": "https://containerfaqs.com/wp-content/uploads/2022/02/is-plastic-number-2-HDPE-recyclable-960x540.png.webp",
+        "title": "Is Plastic Number 2 Recyclable? (Read This Before Tossing It In The Recycling Bin)",
+        "author": "ContainerFAQs",
+        "publication_date": "2022-12-28T02:34:32-05:00",
+        "plastic_type": "HDPE"
+    },
+    {
+        "url": "https://ssfs.recyclist.co/guide/2-plastic-hdpe",
+        "img_url": "https://hq2.recyclist.co/wp-content/uploads/sites/2/2015/02/no2plastic1-300x300.jpg",
+        "title": "South San Francisco Scavenger Recycling Guide",
+        "author": "SSFS",
+        "publication_date": null,
+        "plastic_type": "HDPE"
+    },
+    {
+        "url": "https://tangentmaterials.com/understanding-how-hdpe-is-recycled/",
+        "img_url": "https://tangentmaterials.com/wp-content/uploads/2020/10/YgB1vEsUP8JJ2PhqBHSjS1pHOto6in3V1601578478.jpg",
+        "title": "Understanding How HDPE Is Recycled",
+        "author": "Green Initiatives",
+        "publication_date": null,
+        "plastic_type": "HDPE"
+    }
+    ],
+    
+    "PVC":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-pvc-plastic-3/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/recycling-pvc-plastic-3.png",
+        "title": "How to Recycle PVC (Plastic #3)",
+        "author": "Maryruth Belsey Priebe",
+        "publication_date": null,
+        "plastic_type": "PVC"
+    },
+    {
+        "url": "https://www.pvcfittingsonline.com/resource-center/how-to-properly-dispose-of-pvc/",
+        "img_url": "https://www.pvcfittingsonline.com/wordpress/wp-content/uploads/2021/01/recycle-pvc-symbol.png",
+        "title": "How to Properly Dispose of PVC",
+        "author": "Ashley Carsten",
+        "publication_date": "2021-02-04 19:07:28",
+        "plastic_type": "PVC"
+    },
+    {
+        "url": "https://www.weekand.com/home-garden/article/pvc-disposal-recycling-18072447.php",
+        "img_url": null,
+        "title": "PVC Disposal and Recycling",
+        "author": "SF Gate Contributor",
+        "publication_date": "2020-12-03 19:07:28",
+        "plastic_type": "PVC"
+    },
+    {
+        "url": "https://www.palram.com/blog/sign-display/can-pvc-be-recycled/",
+        "img_url": "https://www.palram.com/wp-content/uploads/2020/11/4-1.jpg",
+        "title": "Can PVC be Recycled?",
+        "author": "Omer Shoham",
+        "publication_date": "2020-11-25 19:07:28",
+        "plastic_type": "PVC"
+    },
+    {
+        "url": "https://extruflex.com/pvc-recycling",
+        "img_url": "https://extruflex.com/sites/default/files/styles/max_325x325/public/images-site/recyclage%20illustrationxcf.png?itok=za6YeYXy",
+        "title": "Everything you need to know about PVC recycling",
+        "author": "extruflex",
+        "publication_date": null,
+        "plastic_type": "PVC"
+    }
+    ],
+    
+    "LDPE":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-ldpe-plastic-4/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/recycling-ldpe-plastic-4.png",
+        "title": "How to Recycle LDPE (Plastic #4)",
+        "author": "Maryruth Belsey Priebe",
+        "publication_date": null,
+        "plastic_type": "LDPE"
+    },
+    {
+        "url": "https://www.ehow.com/how_7208303_melt-ldpe.html",
+        "img_url": "https://img.ehowcdn.com/630x/cppd/227/191/fotolia_6428456_XS.jpg?type=webp",
+        "title": "How to Melt LDPE",
+        "author": "Kathryn Rateliff Barr",
+        "publication_date": null,
+        "plastic_type": "LDPE"
+    },
+    {
+        "url": "https://everydayrecycler.com/plastic-numbers-no-4-ldpe/",
+        "img_url": "https://everydayrecycler.com/wp-content/uploads/2020/03/plastic-number-4-b.jpg",
+        "title": "Plastic Number 4 LDPE – Low-density Polyethylene",
+        "author": "Everyday Recycler",
+        "publication_date": null,
+        "plastic_type": "LDPE"
+    },
+    {
+        "url": "https://ssfs.recyclist.co/guide/4-plastic-ldpe",
+        "img_url": "https://hq2.recyclist.co/wp-content/uploads/sites/2/2015/02/no-4-plastic-300x300.jpg",
+        "title": "South San Francisco Scavenger Recycling Guide",
+        "author": "SSFS",
+        "publication_date": null,
+        "plastic_type": "LDPE"
+    },
+    {
+        "url": "https://www.recyclenow.com/recycle-an-item/plastic-bags-and-wrapping",
+        "img_url": null,
+        "title": "Plastic bags and wrapping",
+        "author": "Recycle Now",
+        "publication_date": null,
+        "plastic_type": "LDPE"
+    }
+    ],
+    
+    "PP":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-pp-plastic-5/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/Recycling-PP-Plastic-5.png",
+        "title": "How to Recycle PP (Plastic #5)",
+        "author": "Maryruth Belsey Priebe",
+        "publication_date": null,
+        "plastic_type": "PP"
+    },
+    {
+        "url": "https://www.cadybag.com/polypropylene-recycling-process-introduction",
+        "img_url": "https://www.cadybag.com/wp-content/uploads/2017/12/img_plastic-1.jpg",
+        "title": "Polypropylene Recycling Process: An Introduction",
+        "author": "Doug Smith",
+        "publication_date": "2017-11-07 19:07:28",
+        "plastic_type": "PP"
+    },
+    {
+        "url": "https://www.mountainmat.com/recycling-polypropylene-plastic/",
+        "img_url": "https://i0.wp.com/www.mountainmat.com/wp-content/uploads/2019/05/eco-eco-friendly-garbage-1933386.jpg?w=600&ssl=1",
+        "title": "Recycling Polypropylene Plactic",
+        "author": "Mountain Mat",
+        "publication_date": "Jennifer Hillberg",
+        "plastic_type": "PP"
+    },
+    {
+        "url": "https://www.palmetto-industries.com/recycling-polypropylene/",
+        "img_url": "https://www.palmetto-industries.com/wp-content/uploads/2021/08/Recycling-Polypropylene-1024x465.jpg",
+        "title": "Recycling Polypropylene: How To Recycle PP & The Benefits",
+        "author": "2021-08-11 19:07:28",
+        "publication_date": null,
+        "plastic_type": "PP"
+    },
+    {
+        "url": "https://www.azocleantech.com/article.aspx?ArticleID=240",
+        "img_url": "https://d3hnfqimznafg0.cloudfront.net/image-handler/ts/20120625102441/ri/490/src/images/Article_Images/ImageForArticle_240(1).gif",
+        "title": "Recycling of Polypropylene (PP)",
+        "author": "G.P. Thomas",
+        "publication_date": "2012-06-25 19:07:28",
+        "plastic_type": "PP"
+    }
+    ],
+    
+    "PS":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-ps-plastic-6/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/Recycling-PS-Plastic-6.png",
+        "title": "How to Recycle PS (Plastic #6)",
+        "author": "Maryruth Belsey Priebe",
+        "publication_date": null,
+        "plastic_type": "PS"
+    },
+    {
+        "url": "https://www.intcorecycling.com/How-To-Recycle-Polystyrene.html",
+        "img_url": "https://www.intcorecycling.com/pics/Styrofoam%20recycling111.png",
+        "title": "How to Recycle polystyrene?",
+        "author": "GreenMax",
+        "publication_date": null,
+        "plastic_type": "PS"
+    },
+    {
+        "url": "https://science.howstuffworks.com/environmental/green-science/polystyrene-recycling.htm",
+        "img_url": "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3JlY3ljbGUtcG9seXN0eXJlbmUtMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI5MH0sInRvRm9ybWF0IjoiYXZpZiJ9fQ==",
+        "title": "How does polystyrene recycling work?",
+        "author": "John Kelly",
+        "publication_date": null,
+        "plastic_type": "PS"
+    },
+    {
+        "url": "https://www.wikihow.com/Recycle-Styrofoam",
+        "img_url": "https://www.wikihow.com/images/thumb/3/33/Recycle-Styrofoam-Step-1-Version-3.jpg/v4-460px-Recycle-Styrofoam-Step-1-Version-3.jpg.webp",
+        "title": "How to Recycle Styrofoam",
+        "author": "wikiHow",
+        "publication_date": "2022-02-14 19:07:28",
+        "plastic_type": "PS"
+    },
+    {
+        "url": "https://ecofreek.com/recyclable/how-to-recycle-styrofoam/",
+        "img_url": "https://ecofreek.com/wp-content/uploads/2019/11/polystrene-cups-e1573366551667.jpg",
+        "title": "How to Recycle Styrofoam At Home With No Problems",
+        "author": "Viktorija Zenkova",
+        "publication_date": null,
+        "plastic_type": "PS"
+    }
+    ],
+    
+    "OTHERS":[
+    {
+        "url": "https://ecolife.com/recycling/plastic/how-to-recycle-plastic-7/",
+        "img_url": "https://ecolife.com/wp-content/uploads/2022/12/Recycling-Plastic-7.png",
+        "title": "How to Recycle Plastic #7",
+        "author": "Maryruth Belsey Priebe",
+        "publication_date": null,
+        "plastic_type": "Others"
+    },
+    {
+        "url": "https://dirt2tidy.com.au/blog/how-to-recycle-plastic-at-home/",
+        "img_url": "https://dirt2tidy.com.au/blog/wp-content/uploads/2020/08/539787-istock-883173836-768x517.jpg",
+        "title": "How to recycle plastic at home ?",
+        "author": "admin",
+        "publication_date": "2021-06-04 05:49:49",
+        "plastic_type": "Others"
+    },
+    {
+        "url": "https://thehappyhousecleaning.co.uk/how-to-recycle-plastic-at-home/",
+        "img_url": "https://thehappyhousecleaning.co.uk/wp-content/uploads/2022/11/How-to-recycle-plastic-at-home.jpg",
+        "title": "How to recycle plastic at home",
+        "author": "The Happy House Cleaning",
+        "publication_date": "2022-11-09 05:49:49",
+        "plastic_type": "Others"
+    },
+    {
+        "url": "https://zerowaste.id/zero-waste-lifestyle/proses-daur-ulang-plastik/",
+        "img_url": "https://zerowaste.id/wp-content/uploads/2022/12/pengolahan-sampah-plastik-1024x683.jpeg",
+        "title": "Tahapan Proses Daur Ulang Plastik",
+        "author": "Zero Waste",
+        "publication_date": null,
+        "plastic_type": "Others"
+    },
+    {
+        "url": "https://www.pinhome.id/pinhome-home-service/insight/cara-mendaur-ulang-sampah-plastik/",
+        "img_url": "https://www.pinhome.id/pinhome-home-service/wp-content/uploads/2022/02/garbage-2729608_1280-720x405.webp",
+        "title": "7 Cara Mendaur Ulang Sampah Plastik yang Ada di Rumah\ufffc",
+        "author": "Nabila Azmi",
+        "publication_date": "2022-03-09 05:49:49",
+        "plastic_type": "Others"
+    }
+    ]
+}
