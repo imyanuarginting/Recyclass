@@ -191,10 +191,6 @@ The response will contain the highest predicted label for the uploaded image.
 
 Feel free to modify the API according to your needs. Enjoy classifying images!
 
-# API Classification Result
-
-This API allows you to upload an image, classify it using a pre-trained model, and retrieve the classification result.
-
 ## License
 
 This project is licensed under the terms of the Team C23-PS296 - Capstone Project.
