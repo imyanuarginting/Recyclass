@@ -13,11 +13,11 @@ Following are the steps for building an image classification using Transfer Lear
 import os
 import zipfile
 
-zip_ref = zipfile.ZipFile('Recyclass/Recyclass.zip', 'r')
+zip_ref = zipfile.ZipFile('Recyclass/Machine Learning/Dataset.zip', 'r')
 zip_ref.extractall("tmp/")
 zip_ref.close()
 
-base_dir = 'tmp/Recyclass'
+base_dir = 'tmp/Dataset'
 ```
 3. Import some libraries to check whether TensorFlow supports the format of the images or not
 ```
