@@ -13,12 +13,12 @@
     <string name="upload">Unggah</string>
     <string name="next">Lanjut</string>
     <string name="retry">Ulang</string>
-    <string name="success_to_detect">Proses pendeteksian berhasil</string>
-    <string name="failed_to_detect">Terjadi kesalahan saat memproses pendeteksian: %s</string>
+    <string name="success_to_detect">Proses pengklasifikasian berhasil</string>
+    <string name="failed_to_detect">Terjadi kesalahan saat memproses pengklasifikasian: %s</string>
     <string name="arrow">Perluas atau perkecil box</string>
     <string name="reload">Muat ulang</string>
     <string name="timeout">Timeout</string>
-    <string name="no_plastic_found">Tidak ada plastik yang ditemukan</string>
+    <string name="no_plastic_match">Tidak ada plastik yang cocok</string>
     <string name="insert_image_first">Ambil gambar terlebih dahulu</string>
     <string name="take_plastic_picture_only">*ambil gambar plastik</string>
 </resources>

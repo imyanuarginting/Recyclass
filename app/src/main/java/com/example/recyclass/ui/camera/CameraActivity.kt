@@ -2,6 +2,7 @@ package com.example.recyclass.ui.camera
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import com.example.recyclass.ui.listarticle.ListArticleActivity
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -100,7 +102,7 @@ class CameraActivity : AppCompatActivity() {
 
         binding.btnUpload.setOnClickListener {
             if (imageIsReady == 1) {
-                val image = getImage
+                val image = compressImage(getImage)
                 val requestImage = image.asRequestBody("image/jpeg".toMediaType())
                 val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                     "file",
@@ -116,6 +118,7 @@ class CameraActivity : AppCompatActivity() {
                                     imageView.setImageResource(R.drawable.placeholder_picture)
                                 }
                                 imageIsReady = 0
+                                Toast.makeText(this, getString(R.string.no_plastic_match), Toast.LENGTH_SHORT).show()
                             }
                             else {
                                 with(binding) {
@@ -173,6 +176,24 @@ class CameraActivity : AppCompatActivity() {
         outputStream.close()
 
         return file
+    }
+
+    private fun compressImage(image: File) : File {
+        var quality = 100
+        var streamLen: Int
+        val bitmapImage = BitmapFactory.decodeFile(image.path)
+
+        do {
+            val stream = ByteArrayOutputStream()
+            bitmapImage.compress(Bitmap.CompressFormat.JPEG, quality, stream)
+            val byteArray = stream.toByteArray()
+            streamLen = byteArray.size
+            quality -= 3
+        }
+        while (streamLen > 10000000)
+
+        bitmapImage.compress(Bitmap.CompressFormat.JPEG, quality, FileOutputStream(image))
+        return image
     }
 
     companion object {
