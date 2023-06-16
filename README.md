@@ -64,3 +64,5 @@ Whenever we get a new endpoint, we start to work on it from this stage. The firs
 Generating the APK file from the project.
 
 # APK File
+
+https://www.dropbox.com/s/l2dldt12x89z7v5/app-debug.apk?dl=0
