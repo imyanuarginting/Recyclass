@@ -152,6 +152,7 @@ class CameraActivity : AppCompatActivity() {
             intent.putExtra(ListArticleActivity.EXTRA_IMAGE, currentImagePath)
             intent.putExtra(ListArticleActivity.EXTRA_PLASTIC_TYPE, plasticType)
             startActivity(intent)
+            finish()
         }
     }
 
