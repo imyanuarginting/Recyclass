@@ -21,6 +21,6 @@
     <string name="no_plastic_match">Tidak ada plastik yang cocok</string>
     <string name="insert_image_first">Ambil gambar terlebih dahulu</string>
     <string name="take_plastic_picture_only">*ambil gambar plastik</string>
-    <string name="app_desc">Recyclass (Recycle Classification) adalah aplikasi klasifikasi sampah berbasis computer vision. Aplikasi ini menggunakan machine learning untuk mengenali jenis sampah berdasarkan gambar yang diunggah. Terdapat 7 kelas sampah yang dikenali: HDPE, LDPE, PET, PP, PS, PVC, dan Others. Aplikasi juga memiliki fitur artikel terkait untuk meningkatkan pengetahuan tentang daur ulang, serta fitur bank sampah terdekat untuk menemukan lokasi pengumpulan sampah terdekat. Tujuan aplikasi ini adalah meningkatkan kesadaran dan partisipasi dalam praktik daur ulang.</string>
+    <string name="app_desc">Recyclass (Recycle Classification) adalah aplikasi klasifikasi sampah berbasis computer vision. \n\nKami menggunakan machine learning untuk mengenali jenis sampah berdasarkan gambar yang diunggah. Terdapat 7 kelas sampah yang dikenali: HDPE, LDPE, PET, PP, PS, PVC, dan Others. Kami juga memiliki fitur artikel terkait untuk meningkatkan pengetahuan tentang daur ulang, serta fitur bank sampah terdekat untuk menemukan lokasi pengumpulan sampah terdekat. Tujuan aplikasi ini adalah meningkatkan kesadaran dan partisipasi dalam praktik daur ulang.</string>
     <string name="next_page">menuju ke halaman selanjutnya</string>
 </resources>
