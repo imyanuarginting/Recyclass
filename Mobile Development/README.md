@@ -65,4 +65,4 @@ Generating the APK file from the project.
 
 # APK File
 
-https://www.dropbox.com/s/l2dldt12x89z7v5/app-debug.apk?dl=0
+https://www.dropbox.com/s/8yd0d9ii90c41uw/recyclass.apk?dl=0
